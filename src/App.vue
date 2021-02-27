@@ -1,10 +1,13 @@
 <template>
   <div>
     <div class="container mx-auto py-14 space-y-14">
-      <h1 class="text-center text-3xl tracking-wider mb-10 font-semibold uppercase">Should I automate It?</h1>
       <div class="flex justify-center -mx-6">
-        <div class="mx-6 space-y-4 py-4 px-4 max-w-xs border rounded-sm bg-white shadow-sm border-gray-400">
-          <h3 class="text-center font-medium text-lg tracking-wider leading-6 mb-5">Task</h3>
+        <div class="self-center px-4 py-4 mx-6">
+          <img src="/logo.svg" class="block h-auto mx-auto w-28">
+          <h1 class="mt-5 text-3xl font-semibold tracking-wider text-center uppercase">Should I automate It?</h1>
+        </div>
+        <div class="max-w-xs px-4 py-4 mx-6 space-y-4 bg-white border border-gray-400 rounded-sm shadow-sm">
+          <h3 class="mb-5 text-lg font-medium leading-6 tracking-wider text-center">Task</h3>
           <v-input
             title="Duration"
             hint="in Minutes"
@@ -30,8 +33,8 @@
             required
           />
         </div>
-        <div class="mx-6 space-y-4 py-4 px-4 max-w-xs border rounded-sm bg-white shadow-sm border-gray-400">
-          <h3 class="text-center font-medium text-lg tracking-wider leading-6 mb-5">Automation</h3>
+        <div class="max-w-xs px-4 py-4 mx-6 space-y-4 bg-white border border-gray-400 rounded-sm shadow-sm">
+          <h3 class="mb-5 text-lg font-medium leading-6 tracking-wider text-center">Automation</h3>
           <v-input
             title="Duration"
             hint="in Hours"
@@ -51,22 +54,22 @@
         </div>
       </div>
 
-      <div class="py-4 border rounded-sm bg-white shadow-sm border-gray-400">
-        <h3 class="px-4 text-center font-medium text-lg tracking-wider leading-6 mb-5">Amortization in Weeks</h3>
-        <table class="w-full table-fixed tabular-nums leading-none whitespace-nowrap">
+      <div class="py-4 bg-white border border-gray-400 rounded-sm shadow-sm">
+        <h3 class="px-4 mb-5 text-lg font-medium leading-6 tracking-wider text-center">Amortization in Weeks</h3>
+        <table class="w-full leading-none table-fixed tabular-nums whitespace-nowrap">
           <tbody>
             <tr>
-              <td class="px-2 w-10 py-2"></td>
-              <td class="px-2 py-2 border-r"></td>
-              <td :colspan="autoDurationSpread.length" class="text-center px-2 py-1 font-medium">Automation Duration</td>
+              <td class="w-16 px-2 py-2"></td>
+              <td class="w-24 px-2 py-2 border-r"></td>
+              <td :colspan="autoDurationSpread.length" class="px-2 py-1 font-medium text-center">Automation Duration</td>
             </tr>
-            <tr class="border-b font-medium">
+            <tr class="font-medium border-b">
               <td class="px-2 py-2"></td>
               <td class="px-2 py-2 border-r"></td>
               <td
                 v-for="dur of autoDurationSpread"
                 :key="dur"
-                class="text-center px-2 py-2"
+                class="px-2 py-2 text-center"
                 v-text="dur"
               />
             </tr>
@@ -76,20 +79,20 @@
             >
               <td
                 v-if="i === 0"
-                class="px-0 py-0 w-10 relative"
+                class="relative w-16 px-0 py-0"
                 :rowspan="taskRecurrenceSpread.length"
               >
                 <div class="relative w-full h-full bg-red-500">
-                  <div class="absolute h-full w-10 z-10 flex flex-col justify-center items-center">
-                    <div class="absolute font-medium transform -rotate-90">Recurrences per Week</div>
+                  <div class="absolute z-10 flex flex-col items-center justify-center w-16 h-full">
+                    <div class="absolute font-medium text-center transform -rotate-90">Recurrences<br>per Week</div>
                   </div>
                 </div>
               </td>
-              <td class="px-2 py-2 text-right border-r font-medium" v-text="rec" />
+              <td class="px-2 py-2 font-medium text-right border-r" v-text="rec" />
               <td
                 v-for="dur of autoDurationSpread"
                 :key="dur"
-                class="text-center px-2 py-2"
+                class="px-2 py-2 text-center"
                 v-html="getAmortization(rec, dur)"
               />
             </tr>
