@@ -1,0 +1,50 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+@layer utilities {
+  .bg-blur-1 {
+    backdrop-filter: blur(1px);
+  }
+  .bg-blur-2 {
+    backdrop-filter: blur(2px);
+  }
+  .bg-blur-3 {
+    backdrop-filter: blur(3px);
+  }
+  .bg-blur-4 {
+    backdrop-filter: blur(4px);
+  }
+  .bg-blur-5 {
+    backdrop-filter: blur(5px);
+  }
+}
+
+.loading {
+  filter: blur(5px);
+  cursor: wait;
+  pointer-events: none;
+  user-select: none;
+}
+
+::-webkit-input-placeholder {
+  font-style: italic;
+}
+:-moz-placeholder {
+  font-style: italic;
+}
+::-moz-placeholder {
+  font-style: italic;
+}
+:-ms-input-placeholder {
+  font-style: italic;
+}
+::selection {
+ background-color: rgba(98,106,113,1)!important;
+ color: #fff;
+}
+::-moz-selection {
+ background-color: rgba(98,106,113,1)!important;
+ color: #fff;
+}
