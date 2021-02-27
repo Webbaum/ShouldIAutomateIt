@@ -5,7 +5,7 @@
   "scripts": {
     "start": "vite",
     "build": "cross-env NODE_ENV=production vite build",
-    "deploy": "scripts/gh-pages-deploy.js"
+    "deploy": "node scripts/gh-pages-deploy.js"
   },
   "dependencies": {
     "@krknet/fe": "^0.6.0",
