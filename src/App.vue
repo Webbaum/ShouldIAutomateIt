@@ -3,7 +3,7 @@
     <div class="container mx-auto py-6">
       <div class="flex justify-center -mx-6">
         <div class="mx-6 space-y-4 py-4 px-4 max-w-xs border rounded-sm bg-white shadow-sm border-gray-400">
-          <h1 class="text-center font-medium text-lg tracking-wider leading-6 mb-5">Task</h1>
+          <h3 class="text-center font-medium text-lg tracking-wider leading-6 mb-5">Task</h3>
           <v-input
             title="Duration"
             hint="in Minutes"
@@ -30,7 +30,7 @@
           />
         </div>
         <div class="mx-6 space-y-4 py-4 px-4 max-w-xs border rounded-sm bg-white shadow-sm border-gray-400">
-          <h1 class="text-center font-medium text-lg tracking-wider leading-6 mb-5">Automation</h1>
+          <h3 class="text-center font-medium text-lg tracking-wider leading-6 mb-5">Automation</h3>
           <v-input
             title="Duration"
             hint="in Minutes"
@@ -51,6 +51,7 @@
       </div>
 
       <div class="my-10 py-4 px-4 border rounded-sm bg-white shadow-sm border-gray-400">
+        <h3 class="text-center font-medium text-lg tracking-wider leading-6 mb-5">Amortization in Weeks</h3>
         <table class="w-full tabular-nums leading-none">
           <tbody>
             <tr class="border-b">
@@ -114,7 +115,7 @@
       getAmortization (recurrence, duration) {
         const task = this.taskDuration * this.taskCostPerMinute * recurrence
         const auto = duration * this.autoCostPerMinute
-        return formatNum(auto / task, { decimals: 2, html: 'text-gray-400' })
+        return formatNum(Math.ceil(auto / task))
       }
     }
   }
