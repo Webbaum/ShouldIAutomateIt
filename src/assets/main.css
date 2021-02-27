@@ -2,6 +2,8 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+@import "./inter.3.15.css";
+
 
 @layer utilities {
   .bg-blur-1 {

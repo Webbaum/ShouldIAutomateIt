@@ -105,7 +105,6 @@
   import { formatNum } from '@krknet/fe/helpers'
 
   import { scaleLinear } from 'd3-scale'
-  console.log(scaleLinear)
 
   export default {
     components: { vInput },
