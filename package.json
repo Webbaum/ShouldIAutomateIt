@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "vite",
-    "build": "cross-env NODE_ENV=production vite build"
+    "build": "cross-env NODE_ENV=production vite build",
+    "deploy": "scripts/gh-pages-deploy.js"
   },
   "dependencies": {
     "@krknet/fe": "^0.6.0",
@@ -17,6 +18,7 @@
     "@vue/compiler-sfc": "^3.0.5",
     "autoprefixer": "^10.2.4",
     "cross-env": "^7.0.3",
+    "execa": "^5.0.0",
     "postcss": "^8.2.6",
     "tailwindcss": "^2.0.3",
     "vite": "^2.0.1"
