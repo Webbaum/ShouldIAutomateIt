@@ -14,7 +14,7 @@
               hint="in Minutes"
               type="integer"
               post="min"
-              min="1"
+              :min="1"
               v-model="taskDuration"
               required
             />
@@ -23,7 +23,7 @@
               hint="per Week"
               type="number"
               post="x"
-              min="0.1"
+              :min="0.1"
               v-model="taskRecurrence"
               required
             />
@@ -32,7 +32,7 @@
               hint="per Hour"
               post="€/h"
               type="number"
-              min="1"
+              :min="1"
               v-model="taskHourlyCosts"
               required
             />
@@ -46,7 +46,7 @@
               hint="in Hours"
               type="integer"
               post="hours"
-              min="1"
+              :min="1"
               v-model="autoDuration"
               required
             />
@@ -55,7 +55,7 @@
               hint="per Hour"
               post="€/h"
               type="number"
-              min="1"
+              :min="1"
               v-model="autoHourlyCosts"
               required
             />
